@@ -3,7 +3,7 @@ class Solution:
         position = sorted(position)
 
         # helper function
-        def cnt_mid(distance):
+        def helper(distance):
             # put the first one at 1
             count = m - 1
             lastplace = position[0]
@@ -28,7 +28,7 @@ class Solution:
         while left < right:
             mid = left + (right - left) // 2
             # shrink left
-            if cnt_mid(mid):
+            if helper(mid):
                 left = mid + 1
             else:
                 # shrink right
