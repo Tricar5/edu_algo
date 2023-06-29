@@ -1,7 +1,6 @@
 # Макс число посетителей
 
-def maxvisitoronline(n, tin, tout):
-
+def max_visitor_online(n, tin, tout):
     events = []
     for i in range(n):
         events.append((tin[i], 1))
@@ -18,10 +17,10 @@ def maxvisitoronline(n, tin, tout):
         maxonline = max(online, maxonline)
     return maxonline
 
+
 # Время когда кто-то на сайте
 
-def timewithvisitors(n, tin, tout):
-
+def time_with_visitors(n, tin, tout):
     events = []
     for i in range(n):
         events.append((tin[i], 1))
@@ -40,10 +39,8 @@ def timewithvisitors(n, tin, tout):
 
     return notemptytime
 
-#
 
-def maxvisitoronline(n, tin, tout, m, tboss):
-
+def max_visitorы_online(n, tin, tout, m, tboss):
     events = []
     for i in range(n):
         events.append((tin[i], 1))
