@@ -1,22 +1,21 @@
-from typing import List
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+class Solution(object):
+    def merge(self, intervals):
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[List[int]]
+        """
 
-        intervals.sort(key = lambda x: (x[0]))
+        intervals.sort()
 
-        mergedIntervals = []
-        mergedIntervalIndex = 0
-        mergedIntervals.append(intervals[0])
+        output = [intervals[0]]
 
-        for i in range(1, len(intervals)):
-            currentInterval = intervals[i]
-            currentMergedInterval = mergedIntervals[mergedIntervalIndex]
+        for start, end in intervals:
+            last_end = output[-1][1]
 
-            if currentInterval[0] <= currentMergedInterval[1] and currentInterval[0] >= currentMergedInterval[0]:
-                mergedIntervals[mergedIntervalIndex] = [min(currentMergedInterval[0], currentInterval[0]), max(currentMergedInterval[1], currentInterval[1])]
+            if start <= last_end:
+                output[-1][1] = max(last_end, end)
 
             else:
-                mergedIntervals.append(currentInterval)
-                mergedIntervalIndex += 1
+                output.append([start, end])
 
-            return mergedIntervals
+        return output

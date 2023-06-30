@@ -15,28 +15,36 @@ The partition is "ababcbaca", "defegde", "hijhklij".
 This is a partition so that each letter appears in at most one part.
 A partition like "ababcbacadefegde", "hijhklij" is incorrect, because it splits s into less parts.
 
+
+Основная идея:
+
+1) Создать хэш-мапу с каждым последним индексом для символа пройдя по строке
+2) Считать размер партиции во втором проходе
+3) Счита
+
 """
 
 from typing import List
 
-class Solution:
-    def partitionLabels(self, s: str) -> List[int]:
+class Solution(object):
+    def partitionLabels(self, s):
+        """
+        :type s: str
+        :rtype: List[int]
+        """
+
+        last_idx = {}
+
+        for i, c in enumerate(s):
+            last_idx[c] = i
 
         ans = []
-
-        lastIndex = dict()
-
-        # Making hash table
-        for i, c in enumerate(s):
-            lastIndex[c] = i
-
         size, end = 0, 0
 
         for i, c in enumerate(s):
             size += 1
 
-            end = max(lastIndex[c], end)
-
+            end = max(end, last_idx[c])
             if i == end:
                 ans.append(size)
                 size = 0
