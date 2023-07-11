@@ -1,13 +1,13 @@
-def quickSort(arr):
-    if len(arr) < 2:
-        return arr
-
-    else:
-        p_idx = math.random.randint(0, len(arr))
-        pivot = arr[p_idx]
-
-        less = [i for i in arr[1:] if i <= pivot]
-
-        greater = [i for i in arr[1:] if i > pivot]
-
-        return quickSort(less) + [pivot] + quickSort(greater)
+class Solution(object):
+    def sortArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        if len(nums) <= 1:
+            return nums
+        else:
+            pivot = nums[0]
+            left = [x for x in nums[1:] if x < pivot]
+            right = [x for x in nums[1:] if x >= pivot]
+        return self.sortArray(left) + [pivot] + self.sortArray(right)
