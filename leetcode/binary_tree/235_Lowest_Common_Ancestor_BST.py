@@ -24,4 +24,4 @@ class Solution:
         #l = self.lowestCommonAncestor(root.left, p, q)
         #r = self.lowestCommonAncestor(root.right, p, q)
 
-        return lowestCommonAncestor(root.left, p, q) or lowestCommonAncestor(root.right, p, q)
+        return self.lowestCommonAncestor(root.left, p, q) or self.lowestCommonAncestor(root.right, p, q)
