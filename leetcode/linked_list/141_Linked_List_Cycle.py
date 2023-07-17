@@ -1,10 +1,22 @@
+"""
+
+URL: https://leetcode.com/problems/linked-list-cycle/description/
+
+Идея:
+
+1) Два указателя
+2) Один указатель движется на шаг, второй на два шага
+
+"""
+
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
 
-"""Floyd Tortoise & Hare"""
+
 
 
 class Solution(object):

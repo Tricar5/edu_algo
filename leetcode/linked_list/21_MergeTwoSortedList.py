@@ -1,0 +1,45 @@
+"""
+URL: https://leetcode.com/problems/merge-two-sorted-lists/description/
+
+Идея:
+1) Создать dummy и tail -> dummy для head, tail для работы
+2) Идти по элементам связного списка пока они есть - меняя tail в зависимости от величины
+3)
+
+"""
+
+
+from typing import Optional
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        dummy = ListNode()
+        tail = dummy
+
+        while list1 and list2:
+
+            if list1.val <= list2.val:
+                tail.next = list1
+                list1 = list1.next
+
+            else:
+                tail.next = list2
+                list2 = list2.next
+
+            tail = tail.next
+
+        if list1:
+            tail.next = list1
+            list1 = list1.next
+
+        if list2:
+            tail.next = list2
+            list2 = list2.next
+
+        return dummy.next
