@@ -21,7 +21,5 @@ class Solution:
         elif min(p.val, q.val) < root.val < max(p.val, q.val):
             return root
 
-        #l = self.lowestCommonAncestor(root.left, p, q)
-        #r = self.lowestCommonAncestor(root.right, p, q)
 
         return self.lowestCommonAncestor(root.left, p, q) or self.lowestCommonAncestor(root.right, p, q)
