@@ -28,7 +28,6 @@ def displaylist(ll):
     print(ser)
 
 
-
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev, curr = None, head
@@ -41,7 +40,6 @@ class Solution:
             displaylist(prev)
 
         return prev
-
 
 
 head = ListNode(1,

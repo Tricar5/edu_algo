@@ -1,5 +1,8 @@
 """
 URL: https://leetcode.com/problems/search-a-2d-matrix/description/
+
+Идеи: 1) Проверяем по последнему элементу в ряду
+2) Делаем Binary Search
 """
 
 

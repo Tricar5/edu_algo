@@ -1,6 +1,9 @@
 """
 URL: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
 
+Идеи:
+1) Делаем бэктрекинг (множество решений - buy/sell/cooldown)
+3) Делаем переменную для хранения состояния - можем ли мы купить или нет
 """
 
 class Solution(object):
